@@ -1,16 +1,16 @@
-import { ICountry } from "../../types";
-import { CountryItem } from "../CountryItem/CountryItem";
+import { ICountry } from '../../types';
+import { CountryItem } from '../CountryItem/CountryItem';
 
 interface IProps {
-    countries: ICountry[];
+    country: ICountry[];
 }
 
-export const CountryList = ({ countries }: IProps) => {
+export const CountryList = ({ country }: IProps) => {
     return (
-        <div>
-            <ul className="list-group">
-                <CountryItem countries={countries} />
-            </ul>
-        </div>
+        <ul className='list-group'>
+            {country.map((item) => {
+                return <CountryItem country={item} />;
+            })}
+        </ul>
     );
 };
